@@ -54,7 +54,18 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+/* thêm class này để đoạn văn ko bị lấn dòng, phá giao diện */
+.line-clamp{
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
+/* tránh đường dẫn quá dài làm bị vỡ giao diện */
+.break-all{
+  word-break: break-all;
+}
 /* =================header================== */
 .header {
   background: #fffcf4;
@@ -323,6 +334,7 @@ a {
 }
 
 .popular .course-item {
+  flex: 1; /*chiều dài, chiều rộng 3 cột bằng nhau, ko bị phá vỡ giao diện*/
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
@@ -362,7 +374,7 @@ a {
 }
 
 /* -------tự viết thêm-------- */
-.popular .course-item .title:hover{
+.popular .course-item .title:hover {
   text-shadow: 0.5px 0.5px 0.5px 0.5px #171100;
   text-decoration: underline;
   color: var(--primary-color);
